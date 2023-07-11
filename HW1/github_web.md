@@ -1,0 +1,1 @@
+You can access the web page by https://diliu899.github.io/bioinfo_course/ or you can click [here](https://diliu899.github.io/bioinfo_course/)
