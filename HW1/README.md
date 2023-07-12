@@ -1,3 +1,4 @@
+# Basic Command
 1. 统计字数和行数
 * 统计行数
 ```bash
@@ -75,3 +76,6 @@ ll
 # -rwxrwxr-- 1 test test  636 Jul 10 09:43 test_command.gtf*
 ```
 
+---
+# Github Page
+You can access the web page by https://diliu899.github.io/bioinfo_course/ or you can click [here](https://diliu899.github.io/bioinfo_course/)
