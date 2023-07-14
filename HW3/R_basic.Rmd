@@ -1,0 +1,63 @@
+---
+title: "R basic and plot"
+author: 刘迪
+output: html_document
+---
+
+# R basic
+
+## Q1
+
+### 数据列数
+
+```{r}
+ncol(iris)
+length(iris)
+```
+
+### 每一列的数据类型
+
+[typeof class的区别](https://www.zhihu.com/question/38561993)，R里面的数据类型一直不是很懂，感觉有点乱的
+
+```{r}
+sapply(iris,class)
+```
+
+## Q2
+
+```{r}
+result = data.frame()
+species = levels(iris$Species)
+for (sp in species){
+    tmp = dplyr::filter(iris, Species == sp)
+    tmp = tmp$Sepal.Length
+    result = rbind(result,c(mean(tmp),sd(tmp)))
+}
+colnames(result) = c('mean','std')
+row.names(result) = species
+result
+
+# to csv
+# write.csv(result,'./HW3/result.csv')
+```
+
+## Q3
+
+```{r}
+summary(aov(Sepal.Width ~ Species,data=iris))
+```
+
+从ANOVA结果来看，不同类型的鸢尾花的萼片宽度间有显著性差别
+
+# R plot
+
+```{r,echo=FALSE}
+library(ggplot2)
+```
+
+```{r}
+ggplot(iris,aes(x=Species,y=Sepal.Length,fill=Species)) + geom_violin(trim = FALSE) + labs(title = 'Sepal Length Distribution',x='Species',y='Sepal Length') + scale_y_continuous(limits = c(0.5,7),expand = c(0,2)) + scale_fill_manual(values = c("#C44E52", "#55A868","#4C72B0")) + theme(plot.title = element_text(face = "bold", hjust = 0.5))
+
+# save
+# ggsave('./HW3/plot.png',width = 10,height = 6,dpi = 300)
+```
