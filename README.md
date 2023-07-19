@@ -43,9 +43,18 @@
     * 预处理
         * transformation，adjust dynamic range，基因表达谱跨度特别大，表达基数不同的时候对variance的敏感程度不一样
         * normalization，需要考虑处理背后的假设
-    * 富集分析(GSEA)
+    * 差异表达分析(变化是不是显著)
+        * p value一般取-lg, 一般关注p vale大且表达的deviation比较大的gene
+        * 聚类分析最简单的是根据表达量的高低做聚类，也可以根据表达的pattern等信息来做聚类
+    * function annotation 富集分析(GSEA)
+        * 将gene list作为一个整体进行研究
+        * 把所有的gene在整个测序中差异表达做排序，得到rank，从小到大遍历，遇到gene list中的gene就加分，遇到非gene list的gene就减分，因为gene list中的gene是比较少的，所以加分的权重比较大，另外主要关心的是两端的gene，两端的gene的得分权重更大，可以得到一个总分数的曲线以及总分数，这样无论定义的是什么gene list都有一个打分方式，可以用打分做后续的分析，也可以知道是否有富集之类的问题
+            * 容忍一定程度的噪音，两端的gene的变化很大，更不可能是假阳性/阴性，也因此权重比较大，而中间的gene可能有一些变化但是变化不大可能是假的或者是噪音导致的变化，因此权重也更小
+            * gene list的定义可能有点错的，但是错的这些大概率的差异表达rank是random的，或者比较小的权重比较低，对整体的影响不大
         * 选一个gene set做，gene set比如GO数据
-    * shuffle的目的是为了模拟真实的误差是什么样子的
+    * 控制FDR的方法
+        * BH方法（矫正p value）
+        * permutation方法，得到对于随机误差的估计，利用随机shuffle，得到假的control和实验组，从而得到如果是随机情况下的随机误差的分布。再拿真实数值来看，用随机误差的分布算出是随机误差的概率，如果概率很小就可以接受。shuffle目的就是模拟真实的随机误差
 
 ## Lec5
 * 基因组(一般序列和注释都是从一个数据库来)
