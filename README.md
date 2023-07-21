@@ -121,6 +121,23 @@
     * `ARANCE`分析调控网络，输入为gene list(TF)和seurat类型的experiment的数据，MI互信息的值，调控网络可以用来计算上游基因的活性
     * `Marina`(R package)在不同的cluster中根据TF的调控活性而非简单的TF表达量作为“差异基因”的比较标准，因此需要先用`ARANCE`得到调控网络作为输入
 
+## Lec6
+### 实验要求
+实验报告：实验名称，实验目的，实验设计（实验步骤），实验结果(如：on target off target score要截频记录，还有潜在offtarget的位置要截频记录)
+
+地点：郑裕彤医学楼 E107
+
+Chrisper 引物设计(软件：Benchling)
+* spacer（互补配对）和tracer（二级结构）放在一起是guide RNA，如果只有一条guide RNA就是sgRNA（single guide RNA）
+* **考虑因素**：untarget score使得更好地敲除基因，考虑到如果剪切掉3为单位的核酸就没有办法导致移码突变；考虑不能offtarget 脱靶
+* **原则**：
+    * 不能在UTR上做，效率不高，因此是从CDS设计，从N端开始几百个bp内都是可以的（尽量在前3个exon）
+    * 一般按照on target score排序，选前几个，最高的on target基础上找off target分数尽量高的，同时可以看到哪些gene是off target的目标，到时候可能也要检测一下对应的gene有没有被一起敲掉
+    * sgRNA一般不选有很多重复序列的，比如AGAGAGAG
+* 本次实验：
+    * BbsI粘性末端连接法，sgRNA多设计一下粘性末端，直接合成即可
+    * 验证是否敲除需要对敲除位点附近700做一个测序，需要再设计一个引物
+
 ---
 # 学习计划
 - [ ] 学习组学分析的模型原理和实现
