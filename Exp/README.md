@@ -270,8 +270,15 @@ sg2 中 C1,C3 测序结果较好，C2 有突变，不使用，因此使用 sg2 1
 
 实验员：刘天佑
 
-- Control 明场 ![control_light](transfection/C_mingchang.png) 荧光 ![control_flo](transfection/C_gfp.png)
-- Exp 明场 ![exp_light](transfection/ex_mingchang.png) 荧光 ![exp_flo](transfection/ex_gfp.png) 从结果来看实验组的转染效率明显更高，对照组相对转染效率较低
+- Control
+- 明场 ![control_light](transfection/C_mingchang.png)
+- 荧光 ![control_flo](transfection/C_gfp.png)
+
+- Exp
+- 明场 ![exp_light](transfection/ex_mingchang.png)
+- 荧光 ![exp_flo](transfection/ex_gfp.png)
+
+- 经过 imergeJ 处理融合图片可计算对照组转染效率为 3.05%，实验组转染效率为 17.87%，对照组转染效率比较低，实验组的转染效率较高，可能会发生基因编辑，可以进行后续实验。
 
 ### 3.3.4. day3：收细胞
 
@@ -333,7 +340,7 @@ sg2 中 C1,C3 测序结果较好，C2 有突变，不使用，因此使用 sg2 1
 
 ![result2](knock_out/sg2.png)
 
-从结果来看，没有达到敲除效果，因此最后的 qPCR 并非使用本次自己转染的细胞，来自张咏妍同学转染的细胞
+从结果来看，没有达到敲除效果，因此最后的 qPCR 并非使用本次自己转染的细胞，来自张咏妍同学转染的细胞，该细胞系实现了正确的基因敲除。
 
 ### 3.4.2. RNA 提取
 
@@ -383,11 +390,15 @@ sg2 中 C1,C3 测序结果较好，C2 有突变，不使用，因此使用 sg2 1
 
 ![res](qPCR/analysis.png)
 
+扩增曲线如下图所示
+
+![amplication](/Exp/qPCR/amplication_curve.png)
+
 从数据处理结果来看，实验组 Sg1.1 和 Sg1.2 相较对照组，POLDIP3 表达量均有上调。
 
 # 5. 结论
 
-实验结果来看，确实存在 NFATC3 会对基因 POLDIP3 产生负调控，即在敲除后，POLDIP3 表达上调，预测结果无误，但是由于样本数量太少，因此无法进行合理的统计分析。
+实验结果来看，确实存在 NFATC3 会对基因 POLDIP3 产生负调控，即在 NFATC3 敲除后，POLDIP3 表达上调，预测结果无误，但是由于样本数量太少，因此无法进行合理的统计分析。
 
 从本次实验本身角度而言，大部分实验均成功完成，虽然部分结果为 negative result，可以改进的方面如下：
 
@@ -401,6 +412,6 @@ sg2 中 C1,C3 测序结果较好，C2 有突变，不使用，因此使用 sg2 1
 
 # 6. 其他课程笔记
 
-[Here](https://diliu899.github.io/bioinfo_course/)
+[Click Here](https://diliu899.github.io/bioinfo_course/)
 
 Lec6 开始为实验部分的部分记录，主要为实验原理的简单记录
