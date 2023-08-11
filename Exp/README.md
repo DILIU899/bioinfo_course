@@ -392,7 +392,7 @@ sg2 中 C1,C3 测序结果较好，C2 有突变，不使用，因此使用 sg2 1
 
 扩增曲线如下图所示
 
-![amplication](/Exp/qPCR/amplication_curve.png)
+![amplication](qPCR/amplication_curve.png)
 
 从数据处理结果来看，实验组 Sg1.1 和 Sg1.2 相较对照组，POLDIP3 表达量均有上调。
 
